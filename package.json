@@ -1,0 +1,17 @@
+{
+  "name": "abubakar-adeshina-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio website of Abubakar Adeshina, architectural designer.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node build.mjs && node tools/serve.mjs",
+    "serve": "node tools/serve.mjs",
+    "check": "node build.mjs && node tools/check-links.mjs",
+    "images": "node tools/optimize-images.mjs"
+  }
+}
