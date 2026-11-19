@@ -19,7 +19,7 @@ export function projectCard(p, { variant = "index", sizes = "(min-width: 900px) 
   const cover = image || p.cover;
   return html`<article class="card card-${variant}" data-categories="${p.categories.join(" ")}">
   <a class="card-link" href="/work/${p.slug}/">
-    <div class="card-media">${img(cover.src, cover.alt, { sizes, eager })}</div>
+    <div class="card-media"${cover.position ? html` style="--pos: ${cover.position}"` : ""}>${img(cover.src, cover.alt, { sizes, eager })}</div>
     <div class="card-body">
       <p class="card-number" aria-hidden="true">${p.number}</p>
       <div>
