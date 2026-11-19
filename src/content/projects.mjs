@@ -29,6 +29,28 @@ export const categories = {
   sketches: "Sketches",
 };
 
+/**
+ * A single freehand sketch with one image. The image is public/images/projects/sketches/<image>.webp
+ * (defaults to the slug). `year` and `text` are optional — add them when you have them.
+ */
+function sketch({ number, slug, title, subtitle, medium, alt, image = slug, year = "", text = "" }) {
+  return {
+    slug,
+    number,
+    title,
+    subtitle,
+    categories: ["sketches"],
+    featured: false,
+    year,
+    location: "",
+    summary: `${subtitle}: ${alt.charAt(0).toLowerCase()}${alt.slice(1)}.`,
+    cover: { src: `sketches/${image}`, alt },
+    hero: { src: `sketches/${image}`, alt },
+    meta: [["Type", `Freehand sketch · ${subtitle.toLowerCase()}`], ["Medium", medium], ...(year ? [["Year", year]] : [])],
+    blocks: text ? [{ type: "text", heading: "About this sketch", body: [text] }] : [],
+  };
+}
+
 export const projects = [
   {
     slug: "ile-akekoo",
@@ -719,55 +741,272 @@ export const projects = [
     ],
   },
 
+  // ---------------------------------------------------------------- SKETCHES
+  // Each sketch is its own entry on the Work page (filter: "Sketches").
+  // Rename a sketch by changing its `title`; change its web address with `slug`.
+
   {
-    slug: "sketches",
+    slug: "ile-amo",
     number: "05",
-    title: "Sketchbook",
-    subtitle: "Freehand form studies",
+    title: "Ilé Amọ̀",
+    plainTitle: "Ile Amo",
+    subtitle: "The House of Clay",
     categories: ["sketches"],
     featured: false,
-    year: "2025–2026",
-    location: "",
-    summary: "Pen sketches exploring form, massing and facade ideas — the quickest way to test a building before it reaches the screen.",
+    year: "2026",
+    location: "Ibadan, Oyo State, Nigeria",
+    summary:
+      "A rammed-earth house drawn from the ground Ibadan was built from — a sweeping tiled roof, a Yoruba courtyard and walls compacted from local soil.",
     cover: {
-      src: "sketches/curved-wall-house",
-      alt: "Blue ballpoint sketch of a building with a tall curved wall sweeping down to the ground beside a tree",
+      src: "sketches/ile-amo-cover",
+      position: "50% 0%", // which part of the image the cropped card shows (left-right, top-bottom)
+      alt: "The original pen sketch floating in the sky above a visualisation of the rammed-earth house with its brown-tiled roof sloping to the ground",
     },
     hero: {
-      src: "sketches/arched-facade",
-      alt: "Blue ballpoint sketch of a building with three tall arched windows beside a gridded block, drawn above hatched ground",
+      src: "sketches/ile-amo-cover",
+      alt: "The original blue pen sketch drawn in the sky above the finished visualisation: a rammed-earth house with layered ochre walls, a tiled roof sweeping to the ground, an arched entrance and scattered square openings",
     },
     meta: [
-      ["Type", "Freehand sketches"],
-      ["Year", "2025–2026"],
-      ["Medium", "Ballpoint and fineliner on paper"],
+      ["Type", "Sketch and visualisation"],
+      ["Location", "Ibadan, Oyo State, Nigeria"],
+      ["Year", "2026"],
+      ["Medium", "Ballpoint on paper; digital visualisation"],
+    ],
+    blocks: [
+      {
+        type: "split",
+        heading: "The House of Clay",
+        body: [
+          "Ile Amo goes back to the ground Ibadan was built from. Its rammed-earth walls are compacted layer by layer from local soil, and the strata of laterite red, ochre and sienna stay visible on the surface. A brown-tiled roof sweeps all the way down to the ground, recalling the rust-brown roofscape that has defined the city’s skyline for generations.",
+          "The design takes its cues from the traditional Yoruba compound: thick, cool walls, soft rounded corners, and a courtyard at the centre of the home, entered through a carved timber arch. It sets these in a contemporary language. Deep-set square openings scatter across the walls, shading the interior and letting air move through the house. A band of Adire-inspired relief is pressed into the earth, and planting is allowed to climb and settle into the walls.",
+        ],
+        image: {
+          src: "sketches/ile-amo-sketch",
+          alt: "Blue ballpoint sketch of a house with a steep tiled roof sweeping to the ground, an arched entrance and a rounded block pierced with small square openings, with glasses and a pen on the paper",
+          caption: "Original ballpoint sketch",
+        },
+      },
+      {
+        type: "text",
+        heading: "Built from its own soil",
+        body: [
+          "The building also responds to the climate. The mass of its earth walls absorbs the heat of the day and releases it slowly, keeping the interior comfortable with less need for mechanical cooling. The roof and a raised stone plinth protect the walls from tropical rain. Because the walls are built from soil dug close to the site, the house has a far smaller carbon footprint than one built of cement block, and the craft of building it stays in local hands.",
+          "Ile Amo argues that Nigerian architecture doesn’t need to borrow from elsewhere to be modern. The answer has always been in our own soil.",
+        ],
+      },
+      {
+        type: "image",
+        size: "wide",
+        image: {
+          src: "sketches/ile-amo-render",
+          alt: "Visualisation of the house in rammed earth with layered ochre walls, a brown-tiled roof sloping to the ground, an arched glazed entrance to a courtyard, climbing plants and a band of Adire-patterned relief",
+          caption: "Visualisation",
+        },
+      },
+    ],
+  },
+
+  sketch({ number: "06", slug: "curved-wall-house", title: "Curved Wall House", subtitle: "Form study", medium: "Ballpoint on paper",
+    alt: "Blue ballpoint sketch of a building with a tall curved wall sweeping down to the ground beside a tree" }),
+  sketch({ number: "07", slug: "arched-facade", title: "Arched Facade", subtitle: "Facade study", medium: "Ballpoint on paper",
+    alt: "Blue ballpoint sketch of a building with three tall arched windows beside a gridded block, drawn above hatched ground" }),
+  {
+    slug: "learning-threshold",
+    number: "08",
+    title: "The Learning Threshold",
+    subtitle: "An African contemporary educational hub",
+    categories: ["sketches"],
+    featured: false,
+    year: "",
+    location: "Nigeria",
+    summary:
+      "A conceptual design for a university learning facility inspired by the climate-responsive and culturally grounded architecture of Francis Kéré.",
+    cover: {
+      src: "sketches/learning-threshold-cover",
+      position: "50% 70%", // frame the card on the tower and passage rather than the sky
+      alt: "Visualisation of a travertine tower raised on concrete columns over a passage lined with an Adire mural, beside a sandstone academic wing and a mature tree, with the original sketch drawn in the sky",
+    },
+    hero: {
+      src: "sketches/learning-threshold-cover",
+      alt: "Visualisation of the learning hub: an ivory travertine tower on concrete columns over a pedestrian passage lined with a blue and earth-toned Adire mural, beside a long sandstone academic wing, with students on stone paving under a tree and the original ink sketch drawn in the sky above",
+    },
+    meta: [
+      ["Type", "Concept sketch and visualisation"],
+      ["Programme", "University learning facility"],
+      ["Location", "Nigerian university campus"],
+      ["Medium", "Ink on paper; digital visualisation"],
     ],
     blocks: [
       {
         type: "text",
-        heading: "Exploration",
+        heading: "Overview",
         body: [
-          "A selection of freehand sketches made between 2025 and 2026. They test ideas quickly — curved walls, stacked and twisting towers, earth-sheltered forms and radial plans — before any of them are modelled.",
+          "A conceptual design for a university learning facility inspired by the climate-responsive and culturally grounded architecture of Francis Kéré.",
         ],
       },
       {
-        type: "gallery",
-        columns: 3,
-        images: [
-          { src: "sketches/curved-wall-house", alt: "Sketch of a building with a sweeping curved wall and a tree beside it" },
-          { src: "sketches/tower-and-hall", alt: "Ink elevation of a square tower over an entrance passage beside a long, low hall" },
-          { src: "sketches/radial-plan", alt: "Pencil sketch of a circular radial plan divided into wedge-shaped rooms" },
-          { src: "sketches/earth-sheltered-forms", alt: "Sketch of rounded window forms set into a sloping hillside" },
-          { src: "sketches/stacked-tower", alt: "Sketch of a tower of stacked, staggered floor plates" },
-          { src: "sketches/folded-form", alt: "Sketch of an S-shaped folded building form with textured surfaces" },
-          { src: "sketches/arched-facade", alt: "Sketch of a facade with three tall arches beside a gridded block" },
-          { src: "sketches/landform-dome", alt: "Ink sketch of a long latticed dome rising out of the landscape with a curving path" },
-          { src: "sketches/sail-roofs", alt: "Sketch of a row of sail-like curved roof shells" },
-          { src: "sketches/ribbed-pod", alt: "Sketch of a tall ribbed, pod-shaped tower" },
-          { src: "sketches/twisting-tower", alt: "Small sketch of a tower with twisting, wave-like floor edges" },
-          { src: "sketches/corner-building", alt: "Sketch of an angular corner building with annotations" },
+        type: "split",
+        heading: "Philosophy",
+        body: [
+          "The architecture is anchored by a solid ivory travertine tower that contrasts with a warm earth-brown sandstone academic wing, creating a clear hierarchy of forms and materials. The focal point of the design is a welcoming pedestrian corridor that cuts through the building, functioning as both a circulation spine and a social space. Lined with smooth rammed-earth walls and enriched by a contemporary Adire-inspired Yoruba mural, the passage transforms movement through the building into a cultural experience.",
+          "Exposed concrete columns elevate portions of the structure, while deep concrete roof overhangs and timber soffits provide shade and climatic comfort. Reflective glazing framed in black aluminium introduces natural light while maintaining a strong architectural presence.",
+        ],
+        image: {
+          src: "sketches/tower-and-hall",
+          alt: "Ink elevation sketch of a square tower raised over an entrance passage beside a long, low hall with a row of high windows",
+          caption: "Concept sketch",
+        },
+      },
+      {
+        type: "image",
+        size: "medium",
+        image: {
+          src: "sketches/learning-threshold-render",
+          alt: "Visualisation of the travertine tower over the mural-lined passage and the sandstone academic wing, with students walking through and sitting beneath a tree",
+          caption: "Visualisation",
+        },
+      },
+      {
+        type: "text",
+        heading: "Rooted in place",
+        body: [
+          "Set within a Nigerian university campus, the building is surrounded by an African contemporary landscape featuring mature African mahogany trees, shaded seating areas, and random-cut natural stone paving. The design balances architecture and landscape, creating spaces where students can gather, study, and connect.",
+          "Strong daylight, crisp shadows, natural materials, and cultural storytelling combine to create an educational environment that is both modern and deeply rooted in place — an expression of African contemporary architecture where learning, community, and identity converge.",
         ],
       },
     ],
   },
+
+  {
+    slug: "woven-opera-house",
+    number: "09",
+    title: "The Woven Opera House",
+    subtitle: "A 1,000-seat opera house woven like a basket",
+    categories: ["sketches", "cultural"],
+    featured: false,
+    year: "",
+    location: "Accra, Ghana",
+    summary:
+      "A conceptual 1,000-seat opera house inspired by Yoruba basket weaving and Ghana’s Bolga baskets — a woven steel shell that rises out of the landscape.",
+    cover: {
+      src: "sketches/woven-opera-house-day",
+      alt: "Visualisation of the opera house by day: a woven steel shell over a glazed hall, with crowds walking up a curving path past baobab trees and the original pen sketch drawn in the sky",
+    },
+    hero: {
+      src: "sketches/woven-opera-house-day",
+      alt: "Visualisation of the opera house by day: a woven steel shell over a glazed hall, with a family and crowds walking up curving paths past baobab trees, and the original pen sketch drawn in the sky above",
+    },
+    meta: [
+      ["Type", "Concept sketch and visualisation"],
+      ["Location", "Accra, Ghana"],
+      ["Capacity", "1,000 seats"],
+      ["Floors", "3 above ground, 1 basement"],
+      ["Climate", "Tropical savannah"],
+      ["Medium", "Ink on paper; digital visualisation"],
+    ],
+    blocks: [
+      {
+        type: "split",
+        heading: "Carrying the past forward",
+        body: [
+          "Architecture is often seen as a reflection of its time. But I believe the most meaningful architecture doesn’t leave the past behind — it carries it forward. When developing this concept, I kept asking myself one question: how can African architecture embrace the future without losing touch with its roots? The answer wasn’t found in copying traditional buildings. It was found in understanding the thinking behind them.",
+          "For centuries, master artisans across West Africa have transformed simple strands into woven baskets — objects that are elegant, durable, protective, and deeply embedded in everyday life. Every weave tells a story of craftsmanship, patience, and cultural identity. That became the starting point.",
+        ],
+        image: {
+          src: "sketches/woven-opera-house-sketch",
+          alt: "Black ink concept sketch of a long woven dome rising out of the landscape, with a path curving up into it, a pen above and glasses below on the paper",
+          caption: "Concept sketch",
+        },
+      },
+      {
+        type: "text",
+        heading: "A basket at architectural scale",
+        body: [
+          "Inspired by Yoruba basket weaving and Ghana’s iconic Bolga baskets, this conceptual 1,000-seat opera house reimagines that tradition at an architectural scale. The woven steel shell becomes more than a façade — it filters light, creates shade, protects the glazed interior, and gives the building its unmistakable identity. Even the arrival experience continues the narrative. The approach path appears as though a single strand has been pulled from the basket itself, gradually unravelling from the landscape before rising into the architecture. Rather than sitting on the site, the building feels as though it has grown from the earth.",
+        ],
+      },
+      {
+        type: "image",
+        size: "full",
+        image: {
+          src: "sketches/woven-opera-house-night",
+          alt: "Night visualisation of the opera house glowing warm gold beneath its woven shell, with lit paths, crowds arriving and the sketch drawn in white in the starry sky",
+          caption: "The opera house at night",
+        },
+      },
+      {
+        type: "image",
+        size: "full",
+        image: {
+          src: "sketches/woven-opera-house-exploded-axonometric",
+          alt: "Exploded axonometric separating the building into the woven steel shell, the glass envelope, the auditorium level, the public level, the entrance level and the basement, with material callouts",
+          caption: "Exploded axonometric",
+        },
+      },
+      {
+        type: "parts",
+        heading: "From shell to basement",
+        items: [
+          { title: "Woven shell", text: "Protective woven skin inspired by traditional African basketry." },
+          { title: "Glass envelope", text: "Encases the public spaces and auditorium while keeping a visual connection to the surroundings." },
+          { title: "Third floor — auditorium level", text: "The main 1,000-seat opera auditorium, with balcony, choir rooms and orchestra tuning space." },
+          { title: "Second floor — public level", text: "Grand lobby, indoor amphitheatre, art gallery and exhibition spaces open to the public. A central courtyard brings in light." },
+          { title: "Ground floor — entrance level", text: "Main entrance lobby, café, ticketing, retail and access to the courtyard." },
+          { title: "Basement", text: "Back-of-house spaces: parking, loading bay, mechanical rooms, workshops, dressing rooms and storage." },
+        ],
+      },
+      {
+        type: "text",
+        heading: "Materials and climate",
+        list: [
+          "Woven steel shell — handcrafted steel mullions inspired by Yoruba and Bolga basket weaving, denser in some areas like a real basket",
+          "Pigmented concrete shell — 600 mm thick, smooth, with a subtle patina of water streaks and iron stains beneath the steel",
+          "Tinted glass envelope — greyish-blue glass, 40% reflective, allowing views out while revealing the warm interior lighting",
+          "Carved from the earth — the base is carved and sculpted from the landscape, so the building appears to grow from the ground",
+          "Sustainable design — solar panels on the roof surfaces, natural ventilation through the courtyard, daylighting, rainwater harvesting and shading from the woven shell",
+        ],
+      },
+      {
+        type: "gallery",
+        columns: 2,
+        images: [
+          {
+            src: "sketches/woven-opera-house-shell-detail",
+            alt: "Close-up at dusk of the textured steel strands of the woven shell crossing in front of the glowing glazed facade",
+            caption: "The woven steel shell",
+          },
+          {
+            src: "sketches/woven-opera-house-auditorium",
+            alt: "The auditorium during a concert: an orchestra on a timber stage surrounded by flowing balconies, with the woven shell and city lights visible through the glazing",
+            caption: "The auditorium",
+          },
+        ],
+      },
+      {
+        type: "text",
+        heading: "Seeing tradition through a new lens",
+        body: [
+          "The goal was never simply to design an opera house. It was to explore what contemporary African architecture could become when it draws confidence from its own heritage instead of borrowing its identity from elsewhere. To me, architecture is at its strongest when people don’t just admire the building — they recognise themselves in it.",
+          "Africa has never lacked design intelligence. We’ve simply spent too little time translating it into contemporary architecture. Perhaps the future of African architecture isn’t about inventing something entirely new. Perhaps it’s about seeing our traditions through a new lens.",
+        ],
+      },
+    ],
+  },
+
+  sketch({ number: "10", slug: "earth-sheltered-forms", title: "Earth-Sheltered Forms", subtitle: "Landscape study", medium: "Pen on paper",
+    alt: "Sketch of rounded window forms set into a sloping hillside" }),
+  sketch({ number: "11", slug: "radial-plan", title: "Radial Plan", subtitle: "Plan study", medium: "Pencil on paper",
+    alt: "Pencil sketch of a circular radial plan divided into wedge-shaped rooms" }),
+  sketch({ number: "12", slug: "folded-form", title: "Folded Form", subtitle: "Form study", medium: "Pen on paper",
+    alt: "Sketch of an S-shaped folded building form with textured surfaces" }),
+  sketch({ number: "13", slug: "sail-roofs", title: "Sail Roofs", subtitle: "Roof study", medium: "Pen on paper",
+    alt: "Sketch of a row of sail-like curved roof shells" }),
+  sketch({ number: "14", slug: "stacked-tower", title: "Stacked Tower", subtitle: "Tower study", medium: "Pen on paper",
+    alt: "Sketch of a tower of stacked, staggered floor plates" }),
+  sketch({ number: "15", slug: "twisting-tower", title: "Twisting Tower", subtitle: "Tower study", medium: "Pen on paper",
+    alt: "Small sketch of a tower with twisting, wave-like floor edges" }),
+  sketch({ number: "16", slug: "ribbed-pod", title: "Ribbed Pod", subtitle: "Tower study", medium: "Pen on paper",
+    alt: "Sketch of a tall ribbed, pod-shaped tower" }),
+  sketch({ number: "17", slug: "corner-building", title: "Corner Building", subtitle: "Massing study", medium: "Pen on paper",
+    alt: "Sketch of an angular corner building with annotations" }),
 ];
