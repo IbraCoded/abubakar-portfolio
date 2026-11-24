@@ -744,75 +744,72 @@ export const projects = [
   // ---------------------------------------------------------------- SKETCHES
   // Each sketch is its own entry on the Work page (filter: "Sketches").
   // Rename a sketch by changing its `title`; change its web address with `slug`.
+  // Newest first.
 
   {
-    slug: "ile-amo",
+    slug: "ogba-pupa",
     number: "05",
-    title: "Ilé Amọ̀",
-    plainTitle: "Ile Amo",
-    subtitle: "The House of Clay",
+    title: "Ọgbà Pupa",
+    plainTitle: "Ogba Pupa",
+    subtitle: "The Red Garden",
     categories: ["sketches"],
     featured: false,
-    year: "2026",
-    location: "Ibadan, Oyo State, Nigeria",
+    year: "",
+    location: "Ikeja, Lagos, Nigeria",
     summary:
-      "A rammed-earth house drawn from the ground Ibadan was built from — a sweeping tiled roof, a Yoruba courtyard and walls compacted from local soil.",
+      "A five-storey office building that brings a garden into the busy streets of Ikeja, with rows of curved rust-red planters spilling greenery down its facade.",
     cover: {
-      src: "sketches/ile-amo-cover",
-      position: "50% 0%", // which part of the image the cropped card shows (left-right, top-bottom)
-      alt: "The original pen sketch floating in the sky above a visualisation of the rammed-earth house with its brown-tiled roof sloping to the ground",
+      src: "sketches/ogba-pupa-render",
+      position: "50% 55%", // frame the card on the building rather than the sky
+      alt: "Visualisation of a five-storey cream office building on a Lagos street corner, its main facade lined with staggered rust-red curved planters spilling greenery",
     },
     hero: {
-      src: "sketches/ile-amo-cover",
-      alt: "The original blue pen sketch drawn in the sky above the finished visualisation: a rammed-earth house with layered ochre walls, a tiled roof sweeping to the ground, an arched entrance and scattered square openings",
+      src: "sketches/ogba-pupa-render",
+      alt: "Visualisation of the five-storey office building on a Lagos street corner: a solid cream wall scored into large panels, and a main facade of staggered rust-red curved planters overflowing with plants, above red boundary railings, with a yellow danfo bus parked outside",
     },
     meta: [
       ["Type", "Sketch and visualisation"],
-      ["Location", "Ibadan, Oyo State, Nigeria"],
-      ["Year", "2026"],
+      ["Programme", "Five-storey office building"],
+      ["Location", "Ikeja, Lagos, Nigeria"],
       ["Medium", "Ballpoint on paper; digital visualisation"],
     ],
     blocks: [
       {
         type: "split",
-        heading: "The House of Clay",
+        heading: "A garden on the street",
         body: [
-          "Ile Amo goes back to the ground Ibadan was built from. Its rammed-earth walls are compacted layer by layer from local soil, and the strata of laterite red, ochre and sienna stay visible on the surface. A brown-tiled roof sweeps all the way down to the ground, recalling the rust-brown roofscape that has defined the city’s skyline for generations.",
-          "The design takes its cues from the traditional Yoruba compound: thick, cool walls, soft rounded corners, and a courtyard at the centre of the home, entered through a carved timber arch. It sets these in a contemporary language. Deep-set square openings scatter across the walls, shading the interior and letting air move through the house. A band of Adire-inspired relief is pressed into the earth, and planting is allowed to climb and settle into the walls.",
+          "Ọgbà Pupa is a five-storey office building that brings a garden into the busy streets of Ikeja. Its shell is a solid, quiet mass of cream Tyrolean render, scored into large panels. Against it, the main facade opens up into rows of curved planters clad in rust-red metal. They catch the Lagos sun and spill greenery down the face of the building.",
+          "The design takes a familiar idea, the potted plants that line Lagos balconies and verandas, and builds it into the architecture. The planters are staggered from floor to floor, so no two levels read the same. Their soft, rounded forms play against the hard grid of the floor slabs. The same red metal returns in the roof coping and the boundary railings, tying the building and its compound together.",
         ],
         image: {
-          src: "sketches/ile-amo-sketch",
-          alt: "Blue ballpoint sketch of a house with a steep tiled roof sweeping to the ground, an arched entrance and a rounded block pierced with small square openings, with glasses and a pen on the paper",
+          src: "sketches/ogba-pupa-sketch",
+          alt: "Blue ballpoint perspective sketch of a tall block with one heavily hatched solid wall and a facade of staggered rounded planters, with glasses above and a pen below on the paper",
           caption: "Original ballpoint sketch",
         },
       },
       {
         type: "text",
-        heading: "Built from its own soil",
+        heading: "Shade, cool air and something growing",
         body: [
-          "The building also responds to the climate. The mass of its earth walls absorbs the heat of the day and releases it slowly, keeping the interior comfortable with less need for mechanical cooling. The roof and a raised stone plinth protect the walls from tropical rain. Because the walls are built from soil dug close to the site, the house has a far smaller carbon footprint than one built of cement block, and the craft of building it stays in local hands.",
-          "Ile Amo argues that Nigerian architecture doesn’t need to borrow from elsewhere to be modern. The answer has always been in our own soil.",
+          "The building also responds to the climate. Its west wall is left solid, so a thick, unbroken shell stands between the interior and the harsh afternoon sun, and the offices stay cooler without relying on air conditioning alone. On the main facade, the planting shades the walls, cools the air around the windows and softens the glare of the street. The greenery also gives the people working inside a view of something growing, in a part of the city where green space is scarce.",
+          "Ọgbà Pupa argues that a city building doesn’t have to choose between density and nature. In Lagos, the garden can grow upwards.",
         ],
       },
       {
         type: "image",
-        size: "wide",
+        size: "medium",
         image: {
-          src: "sketches/ile-amo-render",
-          alt: "Visualisation of the house in rammed earth with layered ochre walls, a brown-tiled roof sloping to the ground, an arched glazed entrance to a courtyard, climbing plants and a band of Adire-patterned relief",
-          caption: "Visualisation",
+          src: "sketches/ogba-pupa-board",
+          alt: "Presentation board with the title Ọgbà Pupa, The Red Garden, over the visualisation of the building, with a small white line drawing of the sketch in the corner",
+          caption: "Presentation board",
         },
       },
     ],
   },
 
-  sketch({ number: "06", slug: "curved-wall-house", title: "Curved Wall House", subtitle: "Form study", medium: "Ballpoint on paper",
-    alt: "Blue ballpoint sketch of a building with a tall curved wall sweeping down to the ground beside a tree" }),
-  sketch({ number: "07", slug: "arched-facade", title: "Arched Facade", subtitle: "Facade study", medium: "Ballpoint on paper",
-    alt: "Blue ballpoint sketch of a building with three tall arched windows beside a gridded block, drawn above hatched ground" }),
   {
     slug: "learning-threshold",
-    number: "08",
+    number: "06",
     title: "The Learning Threshold",
     subtitle: "An African contemporary educational hub",
     categories: ["sketches"],
@@ -879,7 +876,7 @@ export const projects = [
 
   {
     slug: "woven-opera-house",
-    number: "09",
+    number: "07",
     title: "The Woven Opera House",
     subtitle: "A 1,000-seat opera house woven like a basket",
     categories: ["sketches", "cultural"],
@@ -993,81 +990,94 @@ export const projects = [
     ],
   },
 
-  sketch({ number: "10", slug: "earth-sheltered-forms", title: "Earth-Sheltered Forms", subtitle: "Landscape study", medium: "Pen on paper",
-    alt: "Sketch of rounded window forms set into a sloping hillside" }),
-  sketch({ number: "11", slug: "radial-plan", title: "Radial Plan", subtitle: "Plan study", medium: "Pencil on paper",
-    alt: "Pencil sketch of a circular radial plan divided into wedge-shaped rooms" }),
-  sketch({ number: "12", slug: "folded-form", title: "Folded Form", subtitle: "Form study", medium: "Pen on paper",
-    alt: "Sketch of an S-shaped folded building form with textured surfaces" }),
-  sketch({ number: "13", slug: "sail-roofs", title: "Sail Roofs", subtitle: "Roof study", medium: "Pen on paper",
-    alt: "Sketch of a row of sail-like curved roof shells" }),
-  sketch({ number: "14", slug: "stacked-tower", title: "Stacked Tower", subtitle: "Tower study", medium: "Pen on paper",
-    alt: "Sketch of a tower of stacked, staggered floor plates" }),
-  sketch({ number: "15", slug: "twisting-tower", title: "Twisting Tower", subtitle: "Tower study", medium: "Pen on paper",
-    alt: "Small sketch of a tower with twisting, wave-like floor edges" }),
-  sketch({ number: "16", slug: "ribbed-pod", title: "Ribbed Pod", subtitle: "Tower study", medium: "Pen on paper",
-    alt: "Sketch of a tall ribbed, pod-shaped tower" }),
-  sketch({ number: "17", slug: "corner-building", title: "Corner Building", subtitle: "Massing study", medium: "Pen on paper",
-    alt: "Sketch of an angular corner building with annotations" }),
-
   {
-    slug: "ogba-pupa",
-    number: "18",
-    title: "Ọgbà Pupa",
-    plainTitle: "Ogba Pupa",
-    subtitle: "The Red Garden",
+    slug: "ile-amo",
+    number: "08",
+    title: "Ilé Amọ̀",
+    plainTitle: "Ile Amo",
+    subtitle: "The House of Clay",
     categories: ["sketches"],
     featured: false,
-    year: "",
-    location: "Ikeja, Lagos, Nigeria",
+    year: "2026",
+    location: "Ibadan, Oyo State, Nigeria",
     summary:
-      "A five-storey office building that brings a garden into the busy streets of Ikeja, with rows of curved rust-red planters spilling greenery down its facade.",
+      "A rammed-earth house drawn from the ground Ibadan was built from — a sweeping tiled roof, a Yoruba courtyard and walls compacted from local soil.",
     cover: {
-      src: "sketches/ogba-pupa-render",
-      position: "50% 55%", // frame the card on the building rather than the sky
-      alt: "Visualisation of a five-storey cream office building on a Lagos street corner, its main facade lined with staggered rust-red curved planters spilling greenery",
+      src: "sketches/ile-amo-cover",
+      position: "50% 0%", // which part of the image the cropped card shows (left-right, top-bottom)
+      alt: "The original pen sketch floating in the sky above a visualisation of the rammed-earth house with its brown-tiled roof sloping to the ground",
     },
     hero: {
-      src: "sketches/ogba-pupa-render",
-      alt: "Visualisation of the five-storey office building on a Lagos street corner: a solid cream wall scored into large panels, and a main facade of staggered rust-red curved planters overflowing with plants, above red boundary railings, with a yellow danfo bus parked outside",
+      src: "sketches/ile-amo-cover",
+      alt: "The original blue pen sketch drawn in the sky above the finished visualisation: a rammed-earth house with layered ochre walls, a tiled roof sweeping to the ground, an arched entrance and scattered square openings",
     },
     meta: [
       ["Type", "Sketch and visualisation"],
-      ["Programme", "Five-storey office building"],
-      ["Location", "Ikeja, Lagos, Nigeria"],
+      ["Location", "Ibadan, Oyo State, Nigeria"],
+      ["Year", "2026"],
       ["Medium", "Ballpoint on paper; digital visualisation"],
     ],
     blocks: [
       {
         type: "split",
-        heading: "A garden on the street",
+        heading: "The House of Clay",
         body: [
-          "Ọgbà Pupa is a five-storey office building that brings a garden into the busy streets of Ikeja. Its shell is a solid, quiet mass of cream Tyrolean render, scored into large panels. Against it, the main facade opens up into rows of curved planters clad in rust-red metal. They catch the Lagos sun and spill greenery down the face of the building.",
-          "The design takes a familiar idea, the potted plants that line Lagos balconies and verandas, and builds it into the architecture. The planters are staggered from floor to floor, so no two levels read the same. Their soft, rounded forms play against the hard grid of the floor slabs. The same red metal returns in the roof coping and the boundary railings, tying the building and its compound together.",
+          "Ile Amo goes back to the ground Ibadan was built from. Its rammed-earth walls are compacted layer by layer from local soil, and the strata of laterite red, ochre and sienna stay visible on the surface. A brown-tiled roof sweeps all the way down to the ground, recalling the rust-brown roofscape that has defined the city’s skyline for generations.",
+          "The design takes its cues from the traditional Yoruba compound: thick, cool walls, soft rounded corners, and a courtyard at the centre of the home, entered through a carved timber arch. It sets these in a contemporary language. Deep-set square openings scatter across the walls, shading the interior and letting air move through the house. A band of Adire-inspired relief is pressed into the earth, and planting is allowed to climb and settle into the walls.",
         ],
         image: {
-          src: "sketches/ogba-pupa-sketch",
-          alt: "Blue ballpoint perspective sketch of a tall block with one heavily hatched solid wall and a facade of staggered rounded planters, with glasses above and a pen below on the paper",
+          src: "sketches/ile-amo-sketch",
+          alt: "Blue ballpoint sketch of a house with a steep tiled roof sweeping to the ground, an arched entrance and a rounded block pierced with small square openings, with glasses and a pen on the paper",
           caption: "Original ballpoint sketch",
         },
       },
       {
         type: "text",
-        heading: "Shade, cool air and something growing",
+        heading: "Built from its own soil",
         body: [
-          "The building also responds to the climate. Its west wall is left solid, so a thick, unbroken shell stands between the interior and the harsh afternoon sun, and the offices stay cooler without relying on air conditioning alone. On the main facade, the planting shades the walls, cools the air around the windows and softens the glare of the street. The greenery also gives the people working inside a view of something growing, in a part of the city where green space is scarce.",
-          "Ọgbà Pupa argues that a city building doesn’t have to choose between density and nature. In Lagos, the garden can grow upwards.",
+          "The building also responds to the climate. The mass of its earth walls absorbs the heat of the day and releases it slowly, keeping the interior comfortable with less need for mechanical cooling. The roof and a raised stone plinth protect the walls from tropical rain. Because the walls are built from soil dug close to the site, the house has a far smaller carbon footprint than one built of cement block, and the craft of building it stays in local hands.",
+          "Ile Amo argues that Nigerian architecture doesn’t need to borrow from elsewhere to be modern. The answer has always been in our own soil.",
         ],
       },
       {
         type: "image",
-        size: "medium",
+        size: "wide",
         image: {
-          src: "sketches/ogba-pupa-board",
-          alt: "Presentation board with the title Ọgbà Pupa, The Red Garden, over the visualisation of the building, with a small white line drawing of the sketch in the corner",
-          caption: "Presentation board",
+          src: "sketches/ile-amo-render",
+          alt: "Visualisation of the house in rammed earth with layered ochre walls, a brown-tiled roof sloping to the ground, an arched glazed entrance to a courtyard, climbing plants and a band of Adire-patterned relief",
+          caption: "Visualisation",
         },
       },
     ],
   },
+
+  sketch({ number: "09", slug: "curved-wall-house", title: "Curved Wall House", subtitle: "Form study", medium: "Ballpoint on paper",
+    alt: "Blue ballpoint sketch of a building with a tall curved wall sweeping down to the ground beside a tree" }),
+
+  sketch({ number: "10", slug: "arched-facade", title: "Arched Facade", subtitle: "Facade study", medium: "Ballpoint on paper",
+    alt: "Blue ballpoint sketch of a building with three tall arched windows beside a gridded block, drawn above hatched ground" }),
+
+  sketch({ number: "11", slug: "earth-sheltered-forms", title: "Earth-Sheltered Forms", subtitle: "Landscape study", medium: "Pen on paper",
+    alt: "Sketch of rounded window forms set into a sloping hillside" }),
+
+  sketch({ number: "12", slug: "radial-plan", title: "Radial Plan", subtitle: "Plan study", medium: "Pencil on paper",
+    alt: "Pencil sketch of a circular radial plan divided into wedge-shaped rooms" }),
+
+  sketch({ number: "13", slug: "folded-form", title: "Folded Form", subtitle: "Form study", medium: "Pen on paper",
+    alt: "Sketch of an S-shaped folded building form with textured surfaces" }),
+
+  sketch({ number: "14", slug: "sail-roofs", title: "Sail Roofs", subtitle: "Roof study", medium: "Pen on paper",
+    alt: "Sketch of a row of sail-like curved roof shells" }),
+
+  sketch({ number: "15", slug: "stacked-tower", title: "Stacked Tower", subtitle: "Tower study", medium: "Pen on paper",
+    alt: "Sketch of a tower of stacked, staggered floor plates" }),
+
+  sketch({ number: "16", slug: "twisting-tower", title: "Twisting Tower", subtitle: "Tower study", medium: "Pen on paper",
+    alt: "Small sketch of a tower with twisting, wave-like floor edges" }),
+
+  sketch({ number: "17", slug: "ribbed-pod", title: "Ribbed Pod", subtitle: "Tower study", medium: "Pen on paper",
+    alt: "Sketch of a tall ribbed, pod-shaped tower" }),
+
+  sketch({ number: "18", slug: "corner-building", title: "Corner Building", subtitle: "Massing study", medium: "Pen on paper",
+    alt: "Sketch of an angular corner building with annotations" }),
 ];
