@@ -1009,4 +1009,65 @@ export const projects = [
     alt: "Sketch of a tall ribbed, pod-shaped tower" }),
   sketch({ number: "17", slug: "corner-building", title: "Corner Building", subtitle: "Massing study", medium: "Pen on paper",
     alt: "Sketch of an angular corner building with annotations" }),
+
+  {
+    slug: "ogba-pupa",
+    number: "18",
+    title: "Ọgbà Pupa",
+    plainTitle: "Ogba Pupa",
+    subtitle: "The Red Garden",
+    categories: ["sketches"],
+    featured: false,
+    year: "",
+    location: "Ikeja, Lagos, Nigeria",
+    summary:
+      "A five-storey office building that brings a garden into the busy streets of Ikeja, with rows of curved rust-red planters spilling greenery down its facade.",
+    cover: {
+      src: "sketches/ogba-pupa-render",
+      position: "50% 55%", // frame the card on the building rather than the sky
+      alt: "Visualisation of a five-storey cream office building on a Lagos street corner, its main facade lined with staggered rust-red curved planters spilling greenery",
+    },
+    hero: {
+      src: "sketches/ogba-pupa-render",
+      alt: "Visualisation of the five-storey office building on a Lagos street corner: a solid cream wall scored into large panels, and a main facade of staggered rust-red curved planters overflowing with plants, above red boundary railings, with a yellow danfo bus parked outside",
+    },
+    meta: [
+      ["Type", "Sketch and visualisation"],
+      ["Programme", "Five-storey office building"],
+      ["Location", "Ikeja, Lagos, Nigeria"],
+      ["Medium", "Ballpoint on paper; digital visualisation"],
+    ],
+    blocks: [
+      {
+        type: "split",
+        heading: "A garden on the street",
+        body: [
+          "Ọgbà Pupa is a five-storey office building that brings a garden into the busy streets of Ikeja. Its shell is a solid, quiet mass of cream Tyrolean render, scored into large panels. Against it, the main facade opens up into rows of curved planters clad in rust-red metal. They catch the Lagos sun and spill greenery down the face of the building.",
+          "The design takes a familiar idea, the potted plants that line Lagos balconies and verandas, and builds it into the architecture. The planters are staggered from floor to floor, so no two levels read the same. Their soft, rounded forms play against the hard grid of the floor slabs. The same red metal returns in the roof coping and the boundary railings, tying the building and its compound together.",
+        ],
+        image: {
+          src: "sketches/ogba-pupa-sketch",
+          alt: "Blue ballpoint perspective sketch of a tall block with one heavily hatched solid wall and a facade of staggered rounded planters, with glasses above and a pen below on the paper",
+          caption: "Original ballpoint sketch",
+        },
+      },
+      {
+        type: "text",
+        heading: "Shade, cool air and something growing",
+        body: [
+          "The building also responds to the climate. Its west wall is left solid, so a thick, unbroken shell stands between the interior and the harsh afternoon sun, and the offices stay cooler without relying on air conditioning alone. On the main facade, the planting shades the walls, cools the air around the windows and softens the glare of the street. The greenery also gives the people working inside a view of something growing, in a part of the city where green space is scarce.",
+          "Ọgbà Pupa argues that a city building doesn’t have to choose between density and nature. In Lagos, the garden can grow upwards.",
+        ],
+      },
+      {
+        type: "image",
+        size: "medium",
+        image: {
+          src: "sketches/ogba-pupa-board",
+          alt: "Presentation board with the title Ọgbà Pupa, The Red Garden, over the visualisation of the building, with a small white line drawing of the sketch in the corner",
+          caption: "Presentation board",
+        },
+      },
+    ],
+  },
 ];
